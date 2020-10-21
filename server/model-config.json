@@ -21,23 +21,11 @@
     "dataSource": "postgres",
     "public": false
   },
-  "Recipe": {
+  "Order": {
     "dataSource": "postgres",
     "public": true
   },
-  "Ingredient": {
-    "dataSource": "postgres",
-    "public": true
-  },
-  "Procedure": {
-    "dataSource": "postgres",
-    "public": true
-  },
-  "Training_Log": {
-    "dataSource": "postgres",
-    "public": true
-  },
-  "Login_Log": {
+  "Product": {
     "dataSource": "postgres",
     "public": true
   }

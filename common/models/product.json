@@ -1,28 +1,30 @@
 {
-  "name": "Training_Log",
+  "name": "Product",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "image": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "created_date": {
-      "type": "date",
-      "required": true
+    "SKU": {
+      "type": "string"
     },
-    "finish_date": {
-      "type": "date"
+    "weight": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
     }
   },
   "validations": [],
   "relations": {
-    "procedure": {
+    "orders": {
       "type": "belongsTo",
-      "model": "Recipe",
+      "model": "Order",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

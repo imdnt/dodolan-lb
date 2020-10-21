@@ -1,19 +1,19 @@
 {
-  "name": "Recipe",
+  "name": "Order",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "recipe_name": {
+    "order_id": {
       "type": "string",
       "required": true
     },
-    "recipe_detail": {
+    "customer_id": {
       "type": "string"
     },
-    "recipe_image": {
+    "total": {
       "type": "string"
     }
   },
@@ -21,7 +21,7 @@
   "relations": {
     "procedures": {
       "type": "hasMany",
-      "model": "Procedure",
+      "model": "Product",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

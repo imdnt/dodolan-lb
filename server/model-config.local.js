@@ -54,20 +54,12 @@ module.exports = {
     dataSource: mainDS,
     public: false,
   },
-  Recipe: {
+  Product: {
     dataSource: mainDS,
     public: true,
   },
-  Procedure: {
+  Order: {
     dataSource: mainDS,
     public: true,
-  },
-  Ingredient: {
-    dataSource: mainDS,
-    public: true,
-  },
-  Training_Log: {
-    dataSource: mainDS,
-    public: true
   }
 };
