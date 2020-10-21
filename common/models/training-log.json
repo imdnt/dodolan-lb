@@ -1,0 +1,34 @@
+{
+  "name": "Training_Log",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "created_date": {
+      "type": "date",
+      "required": true
+    },
+    "finish_date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "procedure": {
+      "type": "belongsTo",
+      "model": "Recipe",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

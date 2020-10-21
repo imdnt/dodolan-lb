@@ -1,0 +1,36 @@
+{
+  "name": "Ingredient",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ingredient_name": {
+      "type": "string",
+      "required": true
+    },
+    "ingredient_short_detail": {
+      "type": "string"
+    },
+    "ingredient_long_detail": {
+      "type": "string"
+    },
+    "ingredient_is_active": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "procedure": {
+      "type": "belongsTo",
+      "model": "Procedure",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

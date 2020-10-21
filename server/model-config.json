@@ -1,0 +1,44 @@
+{
+  "User": {
+    "dataSource": "postgres"
+  },
+  "AccessToken": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "postgres",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "Recipe": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Ingredient": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Procedure": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Training_Log": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "Login_Log": {
+    "dataSource": "postgres",
+    "public": true
+  }
+}

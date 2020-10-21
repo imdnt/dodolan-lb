@@ -1,0 +1,58 @@
+{
+  "name": "Procedure",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "procedure_name": {
+      "type": "string",
+      "required": true
+    },
+    "procedure_detail": {
+      "type": "string",
+      "required": true
+    },
+    "procedure_image": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "number",
+      "required": true
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ingredients": {
+      "type": "hasMany",
+      "model": "Ingredient",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "recipe": {
+      "type": "belongsTo",
+      "model": "Recipe",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "trainingLogs": {
+      "type": "hasMany",
+      "model": "Training_Log",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
