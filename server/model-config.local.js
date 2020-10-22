@@ -32,7 +32,7 @@ module.exports = {
   },
   User: {
     dataSource: mainDS,
-    public: true,
+    public: false,
     noMigration: true,
   },
   AccessToken: {
@@ -61,5 +61,29 @@ module.exports = {
   Order: {
     dataSource: mainDS,
     public: true,
-  }
+  },
+  Account: {
+    dataSource: mainDS,
+    public: true,
+  },
+  blProduct: {
+    dataSource: mainDS,
+    public: true,
+  },
+  orderLog: {
+    dataSource: mainDS,
+    public: true,
+  },
+  orderStatus: {
+    dataSource: mainDS,
+    public: true,
+  },
+  shippingType: {
+    dataSource: mainDS,
+    public: true,
+  },
+  tokpedProduct: {
+    dataSource: mainDS,
+    public: true,
+  },
 };

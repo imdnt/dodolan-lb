@@ -10,11 +10,40 @@
       "type": "string",
       "required": true
     },
-    "SKU": {
+    "sku": {
       "type": "string"
     },
+    "qty": {
+      "type": "number"
+    },
     "weight": {
+      "type": "number"
+    },
+    "weightType": {
       "type": "string"
+    },
+    "variant": {
+      "type": "string"
+    },
+    "images": {
+      "type": [
+        "string"
+      ]
+    },
+    "condition": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "string"
+    },
+    "disabled": {
+      "type": "boolean"
+    },
+    "pinned": {
+      "type": "boolean"
+    },
+    "qtySold": {
+      "type": "number"
     },
     "active": {
       "type": "boolean"
@@ -25,6 +54,22 @@
     "orders": {
       "type": "belongsTo",
       "model": "Order",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "blProducts": {
+      "type": "hasOne",
+      "model": "blProduct",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "tokpedProducts": {
+      "type": "hasOne",
+      "model": "tokpedProduct",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

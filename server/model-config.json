@@ -28,5 +28,29 @@
   "Product": {
     "dataSource": "postgres",
     "public": true
+  },
+  "Account": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "shippingType": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "orderStatus": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "orderLog": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "tokpedProduct": {
+    "dataSource": "postgres",
+    "public": true
+  },
+  "blProduct": {
+    "dataSource": "postgres",
+    "public": true
   }
 }

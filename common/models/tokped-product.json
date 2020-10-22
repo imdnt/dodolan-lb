@@ -1,0 +1,32 @@
+{
+  "name": "tokpedProduct",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tokpedSku": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "string"
+    },
+    "categoryLevel": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "product": {
+      "type": "belongsTo",
+      "model": "Product",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

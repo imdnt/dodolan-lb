@@ -6,15 +6,38 @@
     "validateUpsert": true
   },
   "properties": {
-    "order_id": {
-      "type": "string",
-      "required": true
-    },
-    "customer_id": {
+    "invoiceId": {
       "type": "string"
     },
-    "total": {
+    "orderDate": {
       "type": "string"
+    },
+    "customerName": {
+      "type": "string"
+    },
+    "shippingTrackingNo": {
+      "type": "string"
+    },
+    "customerPhone": {
+      "type": "string"
+    },
+    "customerEmail": {
+      "type": "string"
+    },
+    "customerAddress": {
+      "type": "string"
+    },
+    "channelNotes": {
+      "type": "string"
+    },
+    "additionalNotes": {
+      "type": "string"
+    },
+    "shippingFee": {
+      "type": "number"
+    },
+    "totalPrice": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -22,6 +45,22 @@
     "procedures": {
       "type": "hasMany",
       "model": "Product",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orderStatuses": {
+      "type": "hasMany",
+      "model": "orderStatus",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "shippingTypes": {
+      "type": "hasOne",
+      "model": "shippingType",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

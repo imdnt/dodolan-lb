@@ -1,0 +1,166 @@
+{
+  "name": "Account",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": true
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "pin": {
+      "type": "number"
+    },
+    "storeName": {
+      "type": "string"
+    },
+    "storePhoneNumber": {
+      "type": "string"
+    },
+    "fullname": {
+      "type": "string",
+      "required": true
+    },
+    "verified": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orders": {
+      "type": "hasMany",
+      "model": "Order",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {
+    "getMyself": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "get",
+        "path": "/getMyself"
+      }
+    },
+    "getAllData": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "get",
+        "path": "/getAllData"
+      }
+    },
+    "sendEmail": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "get",
+        "path": "/sendEmail"
+      }
+    },
+    "formatPhoneNumber": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "get",
+        "path": "/admin/format/phone"
+      }
+    }
+  }
+}

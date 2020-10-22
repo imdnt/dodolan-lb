@@ -1,5 +1,5 @@
 {
-  "name": "Ngasah",
+  "name": "dodolan",
   "version": "1.0.0",
   "main": "server/server.js",
   "engines": {
@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint"
   },
   "dependencies": {
     "aws-sdk": "^2.775.0",
@@ -19,6 +19,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
     "loopback-connector-postgresql": "3.9.1",
+    "moment": "^2.29.1",
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
     "serve-favicon": "^2.0.1",
@@ -33,5 +34,5 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "Ngasah"
+  "description": "dodol"
 }
