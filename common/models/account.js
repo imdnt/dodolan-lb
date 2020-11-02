@@ -413,14 +413,14 @@ module.exports = Account => {
       if (req.accessToken == null) {
         throw errorHelper.badAuthorization();
       }
-    //   const account = await Account.findById(req.accessToken.userId);
-    //   return Promise.resolve({
-    //     message: "success",
-    //     status: "success",
-    //     data: {
-    //       account
-    //     }
-    //   });
+      const account = await Account.findById(req.accessToken.userId);
+      return Promise.resolve({
+        message: "success",
+        status: "success",
+        data: {
+          account
+        }
+      });
     } catch (error) {
       throw err;
     }

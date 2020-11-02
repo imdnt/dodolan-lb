@@ -6,7 +6,10 @@ module.exports = function(Product) {
             if (req.accessToken == null) {
             throw errorHelper.badAuthorization();
             }
-          const product = await Product.findById(req.accessToken.userId);
+            
+          const product = await Product.find({
+              where:{accountId:req.accessToken.userId}
+          });
           return Promise.resolve({
             message: "success",
             status: "success",
