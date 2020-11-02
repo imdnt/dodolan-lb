@@ -16,7 +16,7 @@ module.exports = function(Product) {
             product
           });
         } catch (error) {
-            throw err;
+            throw error;
         }
     }
 };
