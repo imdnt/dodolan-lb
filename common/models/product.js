@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(Product) {
-    Product.getMyItem = async () => {
+    Product.getMyItem = async (req, res, cb) => {
         try {
             if (req.accessToken == null) {
             throw errorHelper.badAuthorization();
