@@ -14,19 +14,23 @@
       "type": "string"
     },
     "qty": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "weight": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "weightType": {
-      "type": "string"
+      "type": "string",
+      "default": "KG"
     },
     "variant": {
       "type": "string"
     },
     "price": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "images": {
       "type": [
@@ -34,22 +38,27 @@
       ]
     },
     "condition": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "description": {
       "type": "string"
     },
     "disabled": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "pinned": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "qtySold": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "active": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     }
   },
   "validations": [],
