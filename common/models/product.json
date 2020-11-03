@@ -25,6 +25,9 @@
     "variant": {
       "type": "string"
     },
+    "price": {
+      "type": "number"
+    },
     "images": {
       "type": [
         "string"
