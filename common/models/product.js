@@ -24,15 +24,15 @@ module.exports = function(Product) {
         }
     }
 
-    Order.upload = (id, req, res, cb) => {
+    Product.upload = (id, req, res, cb) => {
         AWS.config.update({
           accessKeyId: "JX5P3TMWV4JHPCJTTPPR",
           secretAccessKey: "zIEVtLWtcy+s1n2osmmbz1yLoD1OihAarHtHmdQ50PU",
           endpoint  : 'sgp1.digitaloceanspaces.com',
         });
-        Order.findById(id).then(recipe => {
+        Product.findById(id).then(recipe => {
           if (!recipe) {
-            const err = new Error('Order\'s not found.');
+            const err = new Error('Product\'s not found.');
             err.statusCode = 400;
             cb(err);
           } else {
