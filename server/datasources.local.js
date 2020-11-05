@@ -6,7 +6,7 @@ module.exports = {
     connector: 'memory',
   },
   postgres: {
-    url: 'postgresql://doadmin:z21144jxil6h2m0n@db-postgresql-sgp1-15799-do-user-3360143-0.b.db.ondigitalocean.com:25060/defaultdb?sslmode=require',
+    url: 'postgresql://doadmin:z21144jxil6h2m0n@db-postgresql-sgp1-15799-do-user-3360143-0.b.db.ondigitalocean.com:25060/defaultdb?sslmode=require&ssl=true',
     name: 'postgres',
     connector: 'postgresql',
   },
