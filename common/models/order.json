@@ -42,17 +42,9 @@
   },
   "validations": [],
   "relations": {
-    "procedures": {
-      "type": "hasMany",
+    "products": {
+      "type": "belongsTo",
       "model": "Product",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "orderStatuses": {
-      "type": "hasMany",
-      "model": "orderStatus",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
