@@ -26,9 +26,9 @@ module.exports = function(Product) {
 
     Product.upload = (id, req, res, cb) => {
         AWS.config.update({
-          accessKeyId: "JX5P3TMWV4JHPCJTTPPR",
-          secretAccessKey: "zIEVtLWtcy+s1n2osmmbz1yLoD1OihAarHtHmdQ50PU",
-          endpoint  : 'sgp1.digitaloceanspaces.com',
+          accessKeyId: "6COMAQEGJJOIMAVW5APH",
+          secretAccessKey: "yuETrH/XDEf5ipQh3tX3Qg731gzK+n0VR2K1EaL2Vc8",
+          endpoint  : 'sfo2.digitaloceanspaces.com',
         });
         Product.findById(id).then(recipe => {
           if (!recipe) {
