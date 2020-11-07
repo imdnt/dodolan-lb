@@ -100,6 +100,38 @@
         "verb": "post",
         "path": "/:id/upload"
       }
+    },
+    "detail": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "string",
+          "required": true
+        },
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "post",
+        "path": "/:id/detail"
+      }
     }
   }
 }
