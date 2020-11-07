@@ -65,7 +65,7 @@ module.exports = function(Order) {
         
                   cb(null, {
                     status: 'success',
-                    message: 'recipe image uploaded successfully',
+                    message: 'image uploaded successfully',
                     data: { recipe },
                   });
                 }
@@ -73,5 +73,24 @@ module.exports = function(Order) {
             }
           });
         };
+  Order.detail = async (id, req, res, cb) => {
+    const order = await Order.find({
+      where:{id},
+      include:["products", "orderStatus","shippingTypes"]
+    })
+    if(order){
+      cb(null, {
+        status: 'success',
+        message: 'Order retrieved successfully',
+        data: order,
+      });
+    }else{
+      cb(null, {
+        status: 'not found',
+        message: 'Order not found',
+        data: {},
+      });
+    }
+  }
     // Order.home = (req)
 };

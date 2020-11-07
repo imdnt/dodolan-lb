@@ -50,6 +50,14 @@
         "nestRemoting": true
       }
     },
+    "orderStatus": {
+      "type": "hasMany",
+      "model": "orderStatus",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
     "shippingTypes": {
       "type": "hasOne",
       "model": "shippingType",
