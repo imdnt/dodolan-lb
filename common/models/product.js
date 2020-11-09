@@ -124,8 +124,8 @@ module.exports = function(Product) {
       
                 cb(null, {
                   status: 'success',
-                  message: 'recipe image uploaded successfully',
-                  data: { recipe },
+                  message: 'image uploaded successfully',
+                  data:recipe ,
                 });
               }
             });
