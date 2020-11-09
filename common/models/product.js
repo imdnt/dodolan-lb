@@ -24,7 +24,7 @@ module.exports = function(Product) {
         }
     }
 
-    Product.highlight = ( type, req, res, cb) => {
+    Product.highlight = async ( type, req, res, cb) => {
       try {
           if (req.accessToken == null) {
           throw errorHelper.badAuthorization();
