@@ -410,6 +410,7 @@ module.exports = Account => {
 
   Account.getMyself = async (req, res, cb) => {
     try {
+      console.log(req)
       const account = await Account.findById(req.accessToken.userId);
       return Promise.resolve({
         message: "success",

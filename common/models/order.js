@@ -92,5 +92,24 @@ module.exports = function(Order) {
       });
     }
   }
+  Order.myOrder = async (req, res, cb) => {
+    try {
+        if (req.accessToken == null) {
+        throw errorHelper.badAuthorization();
+        }
+        
+      const order = await Order.find({
+          where:{accountId:req.accessToken.userId}
+      });
+      return Promise.resolve({
+        message: "success",
+        status: "success",
+        order
+      });
+    } catch (error) {
+        throw error;
+    }
+}
+
     // Order.home = (req)
 };

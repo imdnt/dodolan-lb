@@ -64,7 +64,14 @@
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {
     "getMyself": {
       "accepts": [

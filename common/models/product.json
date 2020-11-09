@@ -148,6 +148,38 @@
         "verb": "get",
         "path": "/getMyItem"
       }
+    },
+    "highlight": {
+      "accepts": [
+        {
+          "arg": "type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "get",
+        "path": "/highlight/:type"
+      }
     }
   }
 }

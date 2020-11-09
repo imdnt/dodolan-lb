@@ -24,6 +24,46 @@ module.exports = function(Product) {
         }
     }
 
+    Product.highlight = ( type, req, res, cb) => {
+      try {
+          if (req.accessToken == null) {
+          throw errorHelper.badAuthorization();
+          }
+          
+       
+        if(type == 'lowStock'){
+          const product = await Product.find({
+            where:{ and: [
+              {accountId:req.accessToken.userId},
+              {qty:{lt:5}}
+            ] }
+          });
+
+        }else if(type == "bestSeller"){
+          const product = await Product.find({
+            where:{ and: [
+              {accountId:req.accessToken.userId},
+              {qtySold:{gt:5}}
+            ] }
+          });
+
+        }else if(type == "favorites"){
+          const product = await Product.find({
+            where:{ and: [
+              {accountId:req.accessToken.userId},
+              {pinned:true}
+            ] }
+          });
+        }
+        return Promise.resolve({
+          message: "success",
+          status: "success",
+          [type]:product.count
+        });
+      } catch (error) {
+          throw error;
+      }
+    }
     Product.upload = (id, req, res, cb) => {
         AWS.config.update({
           accessKeyId: "6COMAQEGJJOIMAVW5APH",
