@@ -410,9 +410,6 @@ module.exports = Account => {
 
   Account.getMyself = async (req, res, cb) => {
     try {
-      if (req.accessToken == null) {
-        throw errorHelper.badAuthorization();
-      }
       const account = await Account.findById(req.accessToken.userId);
       return Promise.resolve({
         message: "success",

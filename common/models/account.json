@@ -42,6 +42,11 @@
   },
   "validations": [],
   "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessToken",
+      "foreignKey": "userId"
+    },
     "orders": {
       "type": "hasMany",
       "model": "Order",
