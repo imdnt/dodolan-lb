@@ -20,7 +20,7 @@ module.exports = function(Order) {
               cb(err);
             } else {
               const s3 = new AWS.S3();
-              const bucket = 'verikool/dante';
+              const bucket = 'mc3/dante';
               const storage = multerS3({
                 s3,
                 bucket,
