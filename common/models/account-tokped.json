@@ -1,0 +1,117 @@
+{
+  "name": "accountTokped",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": true
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "fullname": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orders": {
+      "type": "hasMany",
+      "model": "Order",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "register": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "post",
+        "path": "/register"
+      }
+    },
+    "verification": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "root": true,
+        "type": "Object"
+      },
+      "http": {
+        "verb": "post",
+        "path": "/verification"
+      }
+    }
+  }
+}

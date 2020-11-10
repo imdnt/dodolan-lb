@@ -86,4 +86,8 @@ module.exports = {
     dataSource: mainDS,
     public: true,
   },
+  accountTokped: {
+    dataSource: mainDS,
+    public: true,
+  },
 };

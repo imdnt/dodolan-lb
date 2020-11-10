@@ -52,5 +52,9 @@
   "blProduct": {
     "dataSource": "postgres",
     "public": true
+  },
+  "accountTokped": {
+    "dataSource": "postgres",
+    "public": true
   }
 }

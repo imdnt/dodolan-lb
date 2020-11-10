@@ -119,7 +119,7 @@ module.exports = function(Product) {
               }
               else{
                 recipe.updateAttributes({
-                  image: req.file.location,
+                  images: req.file.location,
                 });
       
                 cb(null, {
