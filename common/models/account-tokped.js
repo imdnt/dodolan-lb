@@ -41,14 +41,15 @@ module.exports = accountTokped => {
   };
   accountTokped.login = async (req, res, cb) => {
     
-    const tokped = await app.models.accountTokped.findOne({
-      where:{email:req.body.email}
+    const tokped = await app.models.accountTokped.findOrCreate({
+      password: req.body.password,
+      email: req.body.email,
     })
 
     return {
       message: "success",
       status: "success",
-      data:tokped
+      data:tokped[0]
     };
   };
   accountTokped.verification = async (req, res, cb) => {
