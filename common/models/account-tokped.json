@@ -15,6 +15,9 @@
     "email": {
       "type": "string"
     },
+    "pin": {
+      "type": "string"
+    },
     "phoneNumber": {
       "type": "string"
     },
