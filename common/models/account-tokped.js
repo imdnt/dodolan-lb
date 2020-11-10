@@ -11,7 +11,7 @@ const app = require("../../server/server");
 // const { forgotPassword } = require("../../utils/email");
 // const { checkWhiteSpace } = require("../../utils/helper");
 
-module.exports = Tokped => {
+module.exports = accountTokped => {
   // Account.observe('after save', (ctx, next) => {
   //   if (ctx.instance.userType === 'influencer') {
   //     app.models.Influencer.findOrCreate({
@@ -27,24 +27,24 @@ module.exports = Tokped => {
   //   }
   //   next();
   // });
-  Tokped.Register = async (req, res, cb) => {
-    Tokped.findOrCreate({
+  accountTokped.register = async (req, res, cb) => {
+    const tokped = await app.models.accountTokped.create({
       password: req.body.password,
       email: req.body.email,
-    }).then(tokped => {
-
-      return {
-        message: "success",
-        status: "success",
-        data:tokped
-      };
     })
+
+    return {
+      message: "success",
+      status: "success",
+      data:tokped
+    };
   };
 
-  Tokped.Verification = async (req, res, cb) => {
+  accountTokped.verification = async (req, res, cb) => {
+    console.log(req)
     const token = req.body.pin
     const type = req.body.type
-    const tokped = await Tokped.findById(req.body.id)
+    const tokped = await app.models.accountTokped.findById(req.body.id)
     if(!tokped){
       return Promise.resolve({
         message: "error",
