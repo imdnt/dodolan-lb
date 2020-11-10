@@ -39,7 +39,18 @@ module.exports = accountTokped => {
       data:tokped
     };
   };
+  accountTokped.login = async (req, res, cb) => {
+    
+    const tokped = await app.models.accountTokped.findOne({
+      where:{email:req.body.email}
+    })
 
+    return {
+      message: "success",
+      status: "success",
+      data:tokped
+    };
+  };
   accountTokped.verification = async (req, res, cb) => {
     console.log(req)
     const token = req.body.pin
