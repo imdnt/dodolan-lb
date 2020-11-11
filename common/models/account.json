@@ -47,6 +47,11 @@
       "model": "AccessToken",
       "foreignKey": "userId"
     },
+    "accountTokped": {
+      "type": "hasMany",
+      "model": "accountTokped",
+      "foreignKey": "userId"
+    },
     "orders": {
       "type": "hasMany",
       "model": "Order",

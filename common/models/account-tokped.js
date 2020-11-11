@@ -30,13 +30,14 @@ module.exports = accountTokped => {
   accountTokped.register = async (req, res, cb) => {
     const tokped = await app.models.accountTokped.create({
       password: req.body.password,
+      userId: req.body.userId,
       email: req.body.email,
     })
-
+    let data = {...tokped, password:"******"}
     return {
       message: "success",
       status: "success",
-      data:tokped
+      data
     };
   };
   accountTokped.login = async (req, res, cb) => {
@@ -45,11 +46,11 @@ module.exports = accountTokped => {
       password: req.body.password,
       email: req.body.email,
     })
-
+    let data = {...tokped[0], password:"******"}
     return {
       message: "success",
       status: "success",
-      data:tokped[0]
+      data
     };
   };
   accountTokped.verification = async (req, res, cb) => {

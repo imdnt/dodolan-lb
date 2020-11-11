@@ -38,6 +38,14 @@
         "nestRemoting": true
       }
     },
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
     "products": {
       "type": "hasMany",
       "model": "Product",
