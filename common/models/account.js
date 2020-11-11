@@ -411,7 +411,17 @@ module.exports = Account => {
   Account.getMyself = async (req, res, cb) => {
     try {
       console.log(req)
-      const account = await Account.findById(req.accessToken.userId);
+      const account = await Account.find({
+        where:{id:req.accessToken.userId},
+        include:[
+            {
+              relation: "accountTokped",
+              scope: {
+                fields:["email","id","pin","userId"]
+              }
+            }
+        ]
+      });
       return Promise.resolve({
         message: "success",
         status: "success",
