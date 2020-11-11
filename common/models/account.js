@@ -411,7 +411,7 @@ module.exports = Account => {
   Account.getMyself = async (req, res, cb) => {
     try {
       console.log(req)
-      const account = await Account.find({
+      const account = await Account.findOne({
         where:{id:req.accessToken.userId},
         include:[
             {
