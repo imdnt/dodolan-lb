@@ -42,7 +42,12 @@
     "channelName": {
       "type": "string",
       "default": "Manual"
+    },
+    "qty": {
+      "type": "number",
+      "default": 1
     }
+
   },
   "validations": [],
   "relations": {
