@@ -38,6 +38,10 @@
     },
     "totalPrice": {
       "type": "number"
+    },
+    "channelName": {
+      "type": "string",
+      "default": "Manual"
     }
   },
   "validations": [],
