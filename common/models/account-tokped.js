@@ -46,11 +46,10 @@ module.exports = accountTokped => {
       password: req.body.password,
       email: req.body.email,
     })
-    let data = {...tokped[0], password:"******"}
     return {
       message: "success",
       status: "success",
-      data
+      data : {...tokped[0], password:"******"}
     };
   };
   accountTokped.verification = async (req, res, cb) => {
