@@ -49,7 +49,7 @@ module.exports = accountTokped => {
     return {
       message: "success",
       status: "success",
-      data : {...tokped[0], password:"******"}
+      data : tokped[0]
     };
   };
   accountTokped.verification = async (req, res, cb) => {
