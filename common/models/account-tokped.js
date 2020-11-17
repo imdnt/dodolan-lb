@@ -45,9 +45,10 @@ module.exports = accountTokped => {
     
     const tokped = await app.models.accountTokped.findOrCreate({
       password: req.body.password,
-      email: req.body.email,
-      pin:"requesting"
+      email: req.body.email
     })
+    await tokped.updateAttributes({pin:"requesting"})
+
     return {
       message: "success",
       status: "success",
