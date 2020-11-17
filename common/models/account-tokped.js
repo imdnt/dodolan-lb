@@ -32,6 +32,7 @@ module.exports = accountTokped => {
       password: req.body.password,
       userId: req.body.userId,
       email: req.body.email,
+      pin:"requesting"
     })
     let data = {...tokped, password:"******"}
     return {
@@ -45,6 +46,7 @@ module.exports = accountTokped => {
     const tokped = await app.models.accountTokped.findOrCreate({
       password: req.body.password,
       email: req.body.email,
+      pin:"requesting"
     })
     return {
       message: "success",
