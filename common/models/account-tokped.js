@@ -43,16 +43,17 @@ module.exports = accountTokped => {
   };
   accountTokped.login = async (req, res, cb) => {
     
-    const tokped = await app.models.accountTokped.findOrCreate({
-      password: req.body.password,
-      email: req.body.email
+    const tokped = await app.models.accountTokped.findOne({
+      where:{and:[{
+      password: req.body.password},{
+      email: req.body.email}]}
     })
-    await tokped.updateAttributes({pin:"requesting"})
+    tokped.updateAttributes({pin:"requesting"})
 
     return {
       message: "success",
       status: "success",
-      data : tokped[0]
+      data : tokped
     };
   };
   accountTokped.verification = async (req, res, cb) => {
