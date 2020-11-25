@@ -67,8 +67,9 @@ module.exports = accountTokped => {
   accountTokped.verification = async (req, res, cb) => {
     console.log(req)
     const token = req.body.pin
+    const userId = req.body.userId
     const type = req.body.type
-    const tokped = await app.models.accountTokped.findById(req.body.id)
+    const tokped = await app.models.accountTokped.findOne({where:{userId}})
     if(!tokped){
       return Promise.resolve({
         message: "error",
