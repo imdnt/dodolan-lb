@@ -43,7 +43,7 @@ module.exports = accountTokped => {
   };
   accountTokped.login = async (req, res, cb) => {
     
-    const tokped = await app.models.accountTokped.findOne({
+    let tokped = await app.models.accountTokped.findOne({
       where:{and:[{
       password: req.body.password},{
       email: req.body.email}]}
