@@ -48,15 +48,15 @@ module.exports = accountTokped => {
       password: req.body.password},{
       email: req.body.email}]}
     })
-    tokped.updateAttributes({pin:"requesting"})
     if(!tokped){
       tokped = await app.models.accountTokped.create({
         password: req.body.password,
         userId: req.body.userId,
-        email: req.body.email,
-        pin:"requesting"
+        email: req.body.email
       })
     }
+    
+    tokped.updateAttributes({pin:"requesting"})
 
     return {
       message: "success",
